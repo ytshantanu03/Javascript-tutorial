@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+    <style>
+      body {
+        background-color: #212121;
+        color: #fff;
+      }
+      .content {
+        text-align: center;
+      }
+      button {
+        color: #fff;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        padding: 5px 20px;
+        margin: 0px 10px;
+      }
+      button:first-of-type {
+        background-color: green;
+      }
+      button:last-of-type {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="heading">
+        <h1>JavaScript Code</h1>
+      </div>
+      <div class="btn">
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    let intervalId;
+
+    document
+      .querySelector("button:first-of-type")
+      .addEventListener("click", function () {
+        if (!intervalId) {
+          intervalId = setInterval(() => {
+            console.log("Hi");
+          }, 1000);
+        }
+      });
+
+    document
+      .querySelector("button:last-of-type")
+      .addEventListener("click", function () {
+        clearInterval(intervalId);
+        intervalId = null;
+      });
+  </script>
+</html>
